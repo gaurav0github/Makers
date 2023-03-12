@@ -9,6 +9,7 @@ With this extension, you can set time limits for specific websites and see how m
 ![timelimit](https://user-images.githubusercontent.com/111301879/224541720-ec55b440-bfc2-4798-ac04-6d6ffbfd5c46.png)
 
 <h3><li>Blocks the site when the time limit expires</li></h3>
+<h3><li>Suggests productive sites as an alternative</li></h3>
 &nbsp;
 
 ![blocked](https://user-images.githubusercontent.com/111301879/224541752-ff10a2bc-36b6-46fc-b63a-9d559a52ad49.png)
