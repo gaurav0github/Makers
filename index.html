@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Time Limiter for Social Media Sites</title>
+    <link href="style/picker/standalone.min.css" rel="stylesheet" />
+    <link href="style/picker/clockpicker.min.css" rel="stylesheet" />
+    <link href="style/settings.css" rel="stylesheet" />
+    <link href="style/webact.css" rel="stylesheet" />
+    <link href="style/chart.css" rel="stylesheet" />
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/settings.js"></script>
+    <script src="scripts/restriction.js"></script>
+    <script src="scripts/picker/jquery-3.3.1.min.js"></script>
+    <script src="scripts/picker/clockpicker.min.js"></script>
+  </head>
+  <body>
+    <div id="preloader" class="preloader">
+      <div class="preloader__image">
+        <div class="title">Loading...</div>
+      </div>
+    </div>
+    <svg class="height-0">
+      <filter id="dropShadow">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+        <feOffset dx="0" dy="1" />
+        <feMerge>
+          <feMergeNode />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </svg>
+    <div id="extensionTitle">
+      <p class="title">Time Limiter for Social Media Sites</p>
+    </div>
+    <div id="buttons" class="btn-block">
+      <a class="active" id="btnByDays">Limits</a>
+      <a id="btnToday">Statistics</a>
+      <a id="settings">Settings</a>
+    </div>
+
+    <div id="statsBlock" class="hide">
+      <div id="chart"></div>
+      <div id="resultTable" class="list-of-site"></div>
+    </div>
+
+    <div id="restrictionsBlock">
+      <label class="setting-header"
+        >Access daily restrictions for websites:
+      </label>
+      <div class="margin-top-10">
+        <input
+          type="text"
+          class="label-with-list"
+          placeholder="Enter website"
+          id="addRestrictionSiteLbl"
+        />
+        <div
+          class="inline-block clockpicker"
+          data-placement="left"
+          data-align="top"
+          data-autoclose="true"
+        >
+          <input
+            type="text"
+            class="clock"
+            placeholder="Time limit"
+            readonly
+            id="addRestrictionTimeLbl"
+          />
+        </div>
+        <input
+          type="button"
+          value="+"
+          class="btn-with-list"
+          id="addRestrictionSiteBtn"
+        />
+      </div>
+      <div class="margin-top-10">
+        <ul id="restrictionsList" class="listbox list" size="10"></ul>
+      </div>
+      <div
+        class="notify warning notify-width-300"
+        id="notifyForRestrictionList"
+        hidden
+      >
+        The site is already in the list
+      </div>
+    </div>
+
+    <div id="settingsBlock" class="hide">
+      <div class="margin-top-10">
+        <label class="setting-header"
+          >Stop tracking if no activity detected for:
+        </label>
+        <div class="margin-top-10">
+          <select id="intervalInactivity" class="option">
+            <option value="30">30 seconds</option>
+            <option value="45">45 seconds</option>
+            <option value="60">1 min</option>
+            <option value="120">2 min</option>
+            <option value="300">5 mins</option>
+            <option value="600">10 mins</option>
+            <option value="1200">20 mins</option>
+            <option value="1800">30 mins</option>
+          </select>
+        </div>
+        <div class="margin-top-10">
+          <label class="setting-header">Data in memory use </label
+          ><label id="memoryUse"></label>
+        </div>
+        <div class="margin-top-10">
+          <input type="button" value="Clear all data" id="clearAllData" />
+        </div>
+        <div class="notify" id="notify" hidden>Data successfully deleted</div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="scripts/chart/d3.v4.min.js"></script>
+<script src="scripts/chart/chart-core.js"></script>
+<script src="scripts/ui.js"></script>
+<script src="scripts/webact.js"></script>

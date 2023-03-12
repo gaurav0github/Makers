@@ -1,0 +1,36 @@
+body{
+    padding: 100px 50px;
+    text-align: center;
+    background-color: rgb(243, 243, 243)
+}
+
+.title{
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.description{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.current-site{
+    font-size: 18px;
+    font-weight: 500;
+    color: red;
+}
+
+.margin-top-10{
+    margin-top: 10px;
+}
+
+.deferred-metrics{
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: red;
+}
+
+#pSites{
+    text-align: left;
+    margin-left: 35vw;
+}

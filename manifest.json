@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "Time Limiter for Social Media Sites",
+  "short_name": "Time Limiter",
+  "version": "1.0.0",
+  "minimum_chrome_version": "26",
+  "description": "Track and limit time your activity in the browser every day.",
+  "icons": {
+    "128": "/icons/logo.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "idle",
+    "chrome://favicon/*",
+    "webNavigation",
+    "unlimitedStorage"
+  ],
+  "offline_enabled": true,
+  "background": {
+    "scripts": [
+      "scripts/common.js",
+      "scripts/storage.js",
+      "scripts/activity.js",
+      "scripts/tab.js",
+      "scripts/timeInterval.js",
+      "scripts/background.js",
+      "scripts/restriction.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Time Limiter for Social Media Sites",
+    "default_icon": "/icons/logo.png"
+  }
+}
